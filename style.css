@@ -1,0 +1,48 @@
+.navbar {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}
+.navbar .container-fluid img{
+    Width: 137.14px;
+    height: 37px;
+}
+.navbar .navbar-nav {
+    margin-left: 264px;
+}
+.navbar .links li{
+    padding: 0px 20px;
+}
+.main-section{
+    background-image: url(main-image.jpeg);
+    background-size: cover;
+}
+footer .row .col-3{
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18.75px;
+
+}
+footer .row .col-3 .elements p{
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 17.58px;
+}
+footer .row .col-3 .icons i{
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+    opacity: 63%;
+}
+footer .col-3 .icons{
+    gap: 18px;
+}
+.rights{
+    color: #676767;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16.42px;
+}

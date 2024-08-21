@@ -1,7 +1,7 @@
 .navbar {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 18px;
 }
 .navbar .container-fluid img{
@@ -57,7 +57,8 @@ footer .col-3 .icons{
     font-size: 14px;
     line-height: 16.42px;
 }
-.coming-soon p{
+.coming-soon p,
+.most-popular p{
     font-family: "Roboto";
     font-size: 30px;
     font-weight: 500;
@@ -100,4 +101,29 @@ footer .col-3 .icons{
 }
 .coming-soon .row{
     margin-bottom: 120px;
+} 
+.slide-sec{
+    position: relative;
+}
+.slider .row{
+    transition: transform 0.5s;
+    flex-wrap: nowrap;
+}
+.most-popular .slide-image{
+    height: 300px;
+} 
+.most-popular .slide-image img{
+    border-radius: 8px;
+}
+.slide-sec .next-btn{
+    position: absolute;
+    background-color: #12121200;
+    color: #000000;
+    font-size: 50px;
+    border: none;
+    right: 0;
+}
+.slider hr{
+    border: solid 1px white;
+    opacity: 1;
 }

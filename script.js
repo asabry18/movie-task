@@ -14,7 +14,8 @@ const movies = [
 
 const comingSoonSection = document.getElementById('comingSoonSection');
 
-movies.forEach(movie => {
+for (let i = 0; i < movies.length; i++) {
+    const movie = movies[i];
     const movieItem = document.createElement('div');
     movieItem.classList.add('col-lg-3', 'col-md-6', 'col-sm-12', 'movie-item');
 
@@ -29,40 +30,28 @@ movies.forEach(movie => {
     `;
 
     comingSoonSection.appendChild(movieItem);
+}
+
+const slidersec = document.querySelector('#slideshow');
+const slides = Array.from(slidersec.children);
+const nextbutton = document.querySelector('.next-btn');
+
+let slideWidth = slides[0].getBoundingClientRect().width;
+let currentIndex = 0;
+
+nextbutton.addEventListener('click', () => {
+    if (currentIndex < slides.length - 1) {
+        if(currentIndex===3){
+            currentIndex=0
+        }
+        else{
+            currentIndex++;
+        }
+    } 
+    moveToSlide(slidersec, currentIndex);
 });
 
-
-// // Array of movies data
-// const movies = [
-//     { title: "Game of Thrones", image: "https://via.placeholder.com/150x225?text=GOT", releaseDate: "18 April" },
-//     { title: "Bliss", image: "https://via.placeholder.com/150x225?text=Bliss", releaseDate: "20 April" },
-//     { title: "After the Rain", image: "https://via.placeholder.com/150x225?text=After+the+Rain", releaseDate: "20 April" },
-//     { title: "Howl's Moving Castle", image: "https://via.placeholder.com/150x225?text=Howl%27s+Moving+Castle", releaseDate: "23 April" },
-//     { title: "Tom & Jerry", image: "https://via.placeholder.com/150x225?text=Tom+%26+Jerry", releaseDate: "24 April" },
-//     { title: "Attack on Titan", image: "https://via.placeholder.com/150x225?text=Attack+on+Titan", releaseDate: "24 April" },
-//     { title: "News of the World", image: "https://via.placeholder.com/150x225?text=News+of+the+World", releaseDate: "23 April" },
-//     { title: "Oğlan evi 2", image: "https://via.placeholder.com/150x225?text=O%C4%9Flan+evi+2", releaseDate: "25 April" },
-// ];
-
-// // Reference to the section where the movies will be displayed
-// const comingSoonSection = document.getElementById('comingSoonSection');
-
-// // Loop through the movies array using a for loop
-// for (let i = 0; i < movies.length; i++) {
-//     const movie = movies[i];
-    
-//     const movieItem = document.createElement('div');
-//     movieItem.classList.add('col-6', 'col-md-4', 'col-lg-3', 'movie-item');
-
-//     movieItem.innerHTML = `
-//         <div class="card bg-dark text-white">
-//             <img src="${movie.image}" class="card-img-top" alt="${movie.title}">
-//             <div class="card-body text-center">
-//                 <h5 class="card-title movie-title">${movie.title}</h5>
-//                 <p class="card-text">${movie.releaseDate}</p>
-//             </div>
-//         </div>
-//     `;
-
-//     comingSoonSection.appendChild(movieItem);
-// }
+function moveToSlide(slidersec, index) {
+    const amountToMove = -index * (slideWidth); 
+    slidersec.style.transform = `translateX(${amountToMove}px)`;
+}
